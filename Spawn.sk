@@ -1,0 +1,25 @@
+command /setspawn:
+	aliases: /setlobby, /sethub
+	permission: tplogin.*
+	permission message: "&cError &8- &7Nemáš práva!"
+	trigger:
+		set {lobby} to location of player
+		send "&cServer &8- &7Spawn bol nastavený!"
+
+
+command /spawn:
+	trigger:
+		teleport player to {lobby}
+		wait 2 tick
+		teleport player to {lobby}
+		send "&cServer &8- &7Teleportujem na spawn..."
+
+on join:
+	teleport player to {lobby}
+	wait 1 tick
+	teleport player to {lobby}
+
+on first join:
+	teleport player to {lobby}
+	wait 1 tick
+	teleport player to {lobby}
